@@ -25,17 +25,22 @@ export class Feedback extends Component {
         }));
     }
 
+    countTotalFeedback = () =>{
+        return this.state.good+this.state.neutral+this.state.bad;
+    }
+
     render(){
         return(
             <div>
                 <h1>Please leave feedback</h1>
-                <button onClick={this.onClickGood}>Good😀</button>
-                <button onClick={this.onClickNeutral}>Neutral😐</button>
-                <button onClick={this.onClickBad}>Bad😡</button>
+                <button onClick={this.onClickGood}>Good 😀</button>
+                <button onClick={this.onClickNeutral}>Neutral 😐</button>
+                <button onClick={this.onClickBad}>Bad 😡</button>
                 <h2> Statistics </h2>
                 <p>Good: {this.state.good}</p>
                 <p>Neutral: {this.state.neutral}</p>
                 <p>Bad: {this.state.bad}</p>
+                <p>Total: {this.countTotalFeedback()}</p>
             </div>
         )
     }
