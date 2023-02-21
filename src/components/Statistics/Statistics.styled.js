@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Box = styled.div`
-    width: 330px;
+    width: 490px;
     display: flex;
-    gap: 100px;
+    gap: 132px;
 `

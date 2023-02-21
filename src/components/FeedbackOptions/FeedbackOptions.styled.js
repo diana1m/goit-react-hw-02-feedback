@@ -1,8 +1,8 @@
 import styled from "styled-components";
 
 export const Button = styled.button`
-    width: 100px;
-    height: 40px;
+    width: 150px;
+    height: 50px;
     border: none;
     border-radius: 5px;
     background-color: #BAD1C2;
@@ -13,5 +13,5 @@ export const Button = styled.button`
 
 export const Wrapper = styled.div`
     display: flex;
-    gap: 15px;
+    gap: 20px;
 `
