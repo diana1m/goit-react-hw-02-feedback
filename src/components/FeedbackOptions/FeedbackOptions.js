@@ -2,15 +2,10 @@ import PropTypes from 'prop-types';
 import { Button, Wrapper } from './FeedbackOptions.styled';
 
 export const FeedbackOptions = ({options, onLeaveFeedback}) => {
-
-    const onClickButton = (e) =>{
-        onLeaveFeedback(e.target.textContent.toLowerCase());
-    }
-
     return(
         <Wrapper>
             {options.map((option, index) => {
-                return <Button onClick={onClickButton} key={index}>{option.toUpperCase()}</Button>
+                return <Button onClick={()=> onLeaveFeedback(option)} key={index}>{option.toUpperCase()}</Button>
             })}
 
             {/* <Button onClick={onClickGood}>Good 😀</Button>
@@ -21,6 +16,6 @@ export const FeedbackOptions = ({options, onLeaveFeedback}) => {
 }
 
 FeedbackOptions.propTypes = {
-    options: PropTypes.array.isRequired,
+    options: PropTypes.arrayOf(PropTypes.string.isRequired).isRequired,
     onLeaveFeedback: PropTypes.func.isRequired,
 }
